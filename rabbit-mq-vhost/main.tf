@@ -1,3 +1,11 @@
+terraform {
+  required_providers {
+    rabbitmq = {
+      source  = "cyrilgdn/rabbitmq"
+    }
+  }
+}
+
 provider "rabbitmq" {
     endpoint = "http://${var.host}"
     username = "${var.username}"
