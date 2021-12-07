@@ -26,6 +26,7 @@ resource "rabbitmq_permissions" "app_user_permissions" {
     read      = ".*"
   }
 }
+
 resource "rabbitmq_permissions" "admin_user_permissions" {
   user  = "${var.admin_username}"
   vhost = "${var.vhost}"
@@ -34,5 +35,21 @@ resource "rabbitmq_permissions" "admin_user_permissions" {
     configure = ""
     write     = ""
     read      = ""
+  }
+}
+
+resource "rabbitmq_policy" "policy_ha" {
+  name  = "ha-all-${var.vhost}"
+  vhost = "${var.vhost}"
+
+  policy {
+    pattern  = "."
+    priority = 0
+    apply_to = "all"
+
+    definition = {
+      ha-mode = "all"
+      ha-sync-mode = "automatic"
+    }
   }
 }
