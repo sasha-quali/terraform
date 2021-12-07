@@ -7,7 +7,7 @@ terraform {
 }
 
 provider "rabbitmq" {
-    endpoint = "http://${var.host}"
+    endpoint = "http://${var.host}:15672"
     username = "${var.username}"
     password = "${var.password}"
 }
