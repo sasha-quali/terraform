@@ -32,9 +32,9 @@ resource "rabbitmq_permissions" "admin_user_permissions" {
   vhost = "${rabbitmq_vhost.colony_vhost.name}"
 
   permissions {
-    configure = ""
-    write     = ""
-    read      = ""
+    configure = "(?!x)x"
+    write     = "(?!x)x"
+    read      = "(?!x)x"
   }
 }
 
