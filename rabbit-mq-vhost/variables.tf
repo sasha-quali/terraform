@@ -3,6 +3,16 @@ variable "host" {
   description = "RabbitMQ host"
 }
 
+variable "admin_username" {
+  default     = "admin"
+  description = "RabbitMQ user"
+}
+
+variable "admin_password" {
+  default     = "admin"
+  description = "RabbitMQ password"
+}
+
 variable "username" {
   default     = "colony"
   description = "RabbitMQ user"
