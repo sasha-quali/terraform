@@ -40,7 +40,7 @@ resource "rabbitmq_permissions" "admin_user_permissions" {
 
 resource "rabbitmq_policy" "policy_ha" {
   name  = "ha-all-${var.vhost}"
-  vhost = "${var.vhost}"
+  vhost = "${rabbitmq_vhost.colony_vhost.name}"
 
   policy {
     pattern  = "."
