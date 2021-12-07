@@ -1,4 +1,4 @@
-provider "rabbitmq" {
+provider "cyrilgdn/rabbitmq" {
     endpoint = "http://${var.host}"
     username = "${var.username}"
     password = "${var.password}"
