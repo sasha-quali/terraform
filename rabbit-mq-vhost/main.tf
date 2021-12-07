@@ -31,6 +31,8 @@ resource "rabbitmq_permissions" "admin_user_permissions" {
   vhost = "${var.vhost}"
 
   permissions {
-    // empty
+    configure = ""
+    write     = ""
+    read      = ""
   }
 }
