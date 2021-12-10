@@ -27,10 +27,6 @@ resource "rabbitmq_permissions" "app_user_permissions" {
   }
 }
 
-resource "rabbitmq_permissions" "admin_user_permissions" {
-  user  = "${var.admin_username}"
-  vhost = "${rabbitmq_vhost.colony_vhost.name}"
-
 resource "rabbitmq_policy" "policy_ha" {
   name  = "ha-all-${var.vhost}"
   vhost = "${rabbitmq_vhost.colony_vhost.name}"
